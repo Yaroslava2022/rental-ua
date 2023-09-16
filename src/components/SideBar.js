@@ -5,10 +5,10 @@ export const SideBar =() => {
 <div className={css.sidebar}>
 <ul className={css.menu_list}>
     <li className={css.menu_item}>
-    <Link to="/"><p>Home</p></Link></li>
+    <Link className={css.link} to="/"><p>Home</p></Link></li>
     <li className={css.menu_item}>
-    <Link to="/catalog"><p>Catalog</p></Link></li>
-    <li className={css.menu_item}><Link to="/favorites"><p>Favorites</p></Link></li>
+    <Link className={css.link} to="/catalog"><p>Catalog</p></Link></li>
+    <li className={css.menu_item}><Link className={css.link} to="/favorites"><p>Favorites</p></Link></li>
 </ul>
 </div>
     )

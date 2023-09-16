@@ -1,0 +1,85 @@
+.picture {
+	width: 274px;
+	height: 268px;
+	border-radius: 14px;
+}
+.cardInfo {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	line-height: 1.5;
+	gap: 4px;
+}
+
+.title {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.5;
+	color: rgba(18, 20, 23, 1);
+}
+.model {
+	color: rgba(52, 112, 255, 1);
+}
+.blockTitle {
+	margin-top: 14px;
+	margin-bottom: 8px;
+	width: 265px;
+	display: flex;
+	justify-content: space-between;
+}
+.price {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.5;
+	color: rgba(18, 20, 23, 1);
+}
+.imgWrapper {
+	position: relative;
+	width: 100%;
+}
+.iconBtn {
+	position: absolute;
+	margin: 0;
+	top: 14px;
+	right: 14px;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+}
+
+.heartIcon {
+	display: block;
+	color: rgb(255 255 255 / 80%);
+	width: 18px;
+	height: 18px;
+}
+
+.heartIconBlue {
+	display: block;
+	color: #3470ff;
+	width: 18px;
+	height: 18px;
+}
+.btnLearnMore {
+	align-self: flex-end;
+	width: 274px;
+	padding: 12px 0;
+	color: #fff;
+	font-family: Manrope;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 1.43;
+	border-radius: 12px;
+	background: rgba(52, 112, 255, 1);
+	border: none;
+	cursor: pointer;
+	outline: none;
+	margin-top: 18px;
+
+	box-shadow: 0px 3.43693px 3.43693px 0px rgba(0, 0, 0, 0.25);
+
+	transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	
+}
