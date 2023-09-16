@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/rental-ua/static/css/main.7acaea2f.css",
-    "main.js": "/rental-ua/static/js/main.07d3183d.js",
+    "main.css": "/rental-ua/static/css/main.1bcf819b.css",
+    "main.js": "/rental-ua/static/js/main.551df9fc.js",
     "index.html": "/rental-ua/index.html",
-    "main.7acaea2f.css.map": "/rental-ua/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/rental-ua/static/js/main.07d3183d.js.map"
+    "main.1bcf819b.css.map": "/rental-ua/static/css/main.1bcf819b.css.map",
+    "main.551df9fc.js.map": "/rental-ua/static/js/main.551df9fc.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/css/main.1bcf819b.css",
+    "static/js/main.551df9fc.js"
   ]
 }
