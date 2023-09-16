@@ -4,11 +4,11 @@ import css from './Catalog.module.css';
 import { fetchCars } from './redux/operations';
 
 const Catalog =() => {
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-    // useEffect(() => {
-    //   dispatch(fetchCars());
-    // }, [dispatch]);
+    useEffect(() => {
+      dispatch(fetchCars());
+    }, [dispatch]);
     console.log(fetchCars());
     return (
         <div className={css.catalog}>
