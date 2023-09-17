@@ -12,8 +12,15 @@
     list-style: none;
 
 }
-.item {
-	width: calc((100%-63px)/4);
-	/* height: 426px; */
-	margin-bottom: 50px;
+
+.loadmore_button {
+	background-color: #fff;
+    margin: 0 auto 20px;
+    display: block;
+    border-radius: 14px;
+    width: 100px;
+    height: 24px;
+	color: rgba(52, 112, 255, 1);
+	border: #fff;
+	font-weight: bold;
 }

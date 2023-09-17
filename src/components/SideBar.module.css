@@ -5,7 +5,7 @@
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: black; /* Black */
+    background-color:darkgoldenrod;/* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
    
@@ -34,5 +34,7 @@ list-style: none;
 }
 .link {
 text-decoration: none;
-color: rgba(52, 112, 255, 1);
+color: blue;
+font-size: 20px;
+
 }

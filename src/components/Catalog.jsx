@@ -25,31 +25,32 @@
 // }
 // export default Catalog;
 import PropTypes from "prop-types";
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getCars } from "./redux/selectors";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+
 import { fetchCars } from "./redux/operations";
 import css from "./Catalog.module.css";
 
 import CarItem from "./Car";
 
 const Catalog = () => {
-	const items = useSelector(getCars);
+	const [page, setPage] = useState(1);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(fetchCars());
-	}, [dispatch]);
+		dispatch(fetchCars(page));
+	}, [dispatch, page]);
 
 	return (
         <div className={css.catalog}>
 		<ul className={css.carsList}>
-			{items.map((item) => (
-				<li key={item.id} className={css.item}>
-					<CarItem car={item} />
-				</li>
-			))}
+			<CarItem/>
+		
 		</ul>
+		{ page<4? <button className={css.loadmore_button} type="button" onClick={() => setPage(page=>(page+1))} >
+          Load more
+        </button> : <div></div>
+}
         </div>
 	);
 };
