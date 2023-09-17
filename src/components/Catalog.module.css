@@ -23,4 +23,8 @@
 	color: rgba(52, 112, 255, 1);
 	border: #fff;
 	font-weight: bold;
+	cursor: pointer;
+}
+.loadmore_button:hover {
+	font-size: 16px;
 }

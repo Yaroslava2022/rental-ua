@@ -96,7 +96,7 @@
 	
 }
 .item {
-	width: calc((100%-63px)/4);
+	width: calc((100%-87px)/4);
 	height: 426px;
 	margin-bottom: 50px;
 }

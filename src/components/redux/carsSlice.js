@@ -22,7 +22,7 @@ const initialState = {
     
       state.isLoading =false
       state.error= null
-      state.items = payload 
+      state.items = [...state.items, ...payload]
   };  
 
   const carsSlice = createSlice({
