@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 // import { useSelector } from "react-redux";
-
+import {AiFillHeart}  from 'react-icons/ai';
 // import { getCars } from "./redux/selectors";
 import css from "./Car.module.css"
 const CarItem = ({ toggleModal, cars }) => {
@@ -15,6 +15,7 @@ const CarItem = ({ toggleModal, cars }) => {
     return (
 <>   <li key={id} className={css.item}>
 			<div className={css.imgWrapper}>
+				<button className={css.addButton}><AiFillHeart/></button>
 				<img
 					className={css.picture}
 					src={img? img: photoLink}
