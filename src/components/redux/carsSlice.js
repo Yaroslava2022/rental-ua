@@ -22,7 +22,10 @@ const initialState = {
     
       state.isLoading =false
       state.error= null
-      state.items = [...state.items, ...payload]
+      
+      state.items = state.items[0]?.id === payload[0]?.id
+      ? payload
+      : [...state.items, ...payload];
   };  
 
   const carsSlice = createSlice({
