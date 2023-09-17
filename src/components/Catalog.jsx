@@ -24,9 +24,11 @@
 //     )
 // }
 // export default Catalog;
+import { Modal } from "./Modal";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getCars } from "./redux/selectors";
 
 import { fetchCars } from "./redux/operations";
 import css from "./Catalog.module.css";
@@ -35,23 +37,41 @@ import CarItem from "./Car";
 
 const Catalog = () => {
 	const [page, setPage] = useState(1);
+	const [isModalOpen, setIsModalOpen] = useState(false);
 	const dispatch = useDispatch();
+	const cars = useSelector(getCars);
+	const [currentCar, setCurrentCar] = useState([]);
 
+	console.log(cars)
+	const toggleModal = event => {
+		setIsModalOpen(state => !state);
+		
+		setCurrentCar(
+		  cars.filter(car => car.id.toString() === event.currentTarget.id)
+		);
+	  };
+	  const handleKeyDown = event => {
+		if (event.key === 'Escape') setIsModalOpen(false);
+	  };
 	useEffect(() => {
 		dispatch(fetchCars(page));
 	}, [dispatch, page]);
-
+ 
 	return (
         <div className={css.catalog}>
+			    <div tabIndex={0} onKeyDown={handleKeyDown}>
 		<ul className={css.carsList}>
-			<CarItem/>
+			<CarItem toggleModal={toggleModal}/>
 		
 		</ul>
 		{ page<4? <button className={css.loadmore_button} type="button" onClick={() => setPage(page=>(page+1))} >
           Load more
         </button> : <div></div>
-}
+}             {isModalOpen && (
+        <Modal card={currentCar} setIsModalOpen={setIsModalOpen} />
+      )}
         </div>
+		</div>
 	);
 };
 

@@ -1,9 +1,9 @@
 import Catalog from "components/Catalog";
 import { SideBar } from "components/SideBar";
-
+import css from './Global.module.css';
 const CatalogPage = () => {
     return (
-        <div>
+        <div className={css.general}>
             <SideBar/>,
       <Catalog/>
            

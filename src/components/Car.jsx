@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { getCars } from "./redux/selectors";
 import css from "./Car.module.css"
-const CarItem = () => {
+const CarItem = ({ toggleModal }) => {
 
 	const cars = useSelector(getCars);
 	return cars.map(car => {
@@ -46,7 +46,7 @@ const CarItem = () => {
 		{/* <div className={css.cardInfo}>
 	
 		</div> */}
-			<button className={css.btnLearnMore}>Learn more</button>
+			<button className={css.btnLearnMore} id={id} onClick={toggleModal}>Learn more</button>
 			</li>
 		</>
        );
