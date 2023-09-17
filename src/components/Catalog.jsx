@@ -1,34 +1,9 @@
-// import { useDispatch, useSelector } from "react-redux";
-// import { useEffect } from 'react';
-// import css from './Catalog.module.css';
-// import { fetchCars } from './redux/operations';
 
-
-// const Catalog =() => {
-//     const cars = useSelector(getCars);
-//     const filter = useSelector(getFilter);
-//     console.log(cars);
-//     console.log(filter);
-//     const dispatch = useDispatch();
-//     const visibleCars = useSelector(getVisibleCars);
-//     console.log(visibleCars);
-//     useEffect(() => {
-//       dispatch(fetchCars());
-//     }, [dispatch]);
-    
-//     return (
-//         <div className={css.catalog}>
-//              <p>Our cars</p>
-//              <ul>{cars}</ul>
-//         </div>
-//     )
-// }
-// export default Catalog;
 import { Modal } from "./Modal";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCars, getFilter} from "./redux/selectors";
+import { getCars} from "./redux/selectors";
 
 import { fetchCars } from "./redux/operations";
 import css from "./Catalog.module.css";
@@ -41,9 +16,7 @@ const Catalog = () => {
 	const dispatch = useDispatch();
 	const cars = useSelector(getCars);
 const {id}= cars;
-	const filter = useSelector(getFilter);
-	
-	console.log(filter);
+
 	const [currentCar, setCurrentCar] = useState([]);
     const [maken, setMaken] = useState('');
 
@@ -63,12 +36,7 @@ const {id}= cars;
 	useEffect(() => {
 		dispatch(fetchCars(page));
 	}, [dispatch, page]);
-// 	const visibleCars = useSelector(getVisibleCars);
-// 	const makesMaps = visibleCars.map(visiblecar=> visiblecar.make.toLowerCase().trim())
-// 	console.log(makesMaps)
-//  const findcars =makesMaps.filter(makesMap=>makesMap===make.toLowerCase().trim());
-// 	console.log(findcars);
-// 	console.log(make);
+
 	const getVisibleCars = cars.filter((car) =>
 	car.make.toString().toLowerCase().includes(maken)
   );

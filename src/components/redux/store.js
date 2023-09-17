@@ -15,6 +15,7 @@ import {
 
 import { filterReducer } from './filterSlice';
 import { carsReducer} from './carsSlice';
+import { favoriteReducer } from './reducer';
 
 const middleware = [
     ...getDefaultMiddleware({
@@ -24,9 +25,10 @@ const middleware = [
     }),
     logger,
   ];
+
   const store = configureStore({
     reducer: {
-     
+      favorite: favoriteReducer,
       cars: carsReducer,
       filter: filterReducer,
     },

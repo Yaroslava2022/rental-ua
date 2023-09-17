@@ -2,3 +2,12 @@
     margin-left: 187px;
     padding: 0px 10px;
 }
+.carsList{
+	display: flex;
+    flex-wrap: wrap;
+	gap: 29px;
+	/* padding-left: 128px;
+	padding-right: 128px; */
+    list-style: none;
+
+}
