@@ -14,7 +14,7 @@ export const getVisibleCars = createSelector(
       return;
     }
     return cars.filter((car) =>
-      car.model.toString().toLowerCase().includes(normalizedFilter)
+      car.make.toString().toLowerCase().includes(normalizedFilter)
     );
   }
 );

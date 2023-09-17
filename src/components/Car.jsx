@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
-import { getCars } from "./redux/selectors";
+// import { getCars } from "./redux/selectors";
 import css from "./Car.module.css"
-const CarItem = ({ toggleModal }) => {
+const CarItem = ({ toggleModal, cars }) => {
 
-	const cars = useSelector(getCars);
+	// const cars = useSelector(getCars);
 	return cars.map(car => {
 		const { id, make, model, year,  photoLink, type, mileage, img, rentalPrice, rentalCompany, address } = car;
 		const addressParts = address.split(", ");

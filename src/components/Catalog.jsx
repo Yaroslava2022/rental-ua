@@ -2,7 +2,7 @@
 // import { useEffect } from 'react';
 // import css from './Catalog.module.css';
 // import { fetchCars } from './redux/operations';
-// import { getCars, getFilter, getVisibleCars } from "./redux/selectors";
+
 
 // const Catalog =() => {
 //     const cars = useSelector(getCars);
@@ -28,7 +28,7 @@ import { Modal } from "./Modal";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCars } from "./redux/selectors";
+import { getCars, getFilter} from "./redux/selectors";
 
 import { fetchCars } from "./redux/operations";
 import css from "./Catalog.module.css";
@@ -40,9 +40,16 @@ const Catalog = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const dispatch = useDispatch();
 	const cars = useSelector(getCars);
+const {id}= cars;
+	const filter = useSelector(getFilter);
+	
+	console.log(filter);
 	const [currentCar, setCurrentCar] = useState([]);
+    const [maken, setMaken] = useState('');
 
-	console.log(cars)
+	const makeHandler = (e) => {
+		setMaken(e.target.value);
+	  };
 	const toggleModal = event => {
 		setIsModalOpen(state => !state);
 		
@@ -56,12 +63,28 @@ const Catalog = () => {
 	useEffect(() => {
 		dispatch(fetchCars(page));
 	}, [dispatch, page]);
- 
+// 	const visibleCars = useSelector(getVisibleCars);
+// 	const makesMaps = visibleCars.map(visiblecar=> visiblecar.make.toLowerCase().trim())
+// 	console.log(makesMaps)
+//  const findcars =makesMaps.filter(makesMap=>makesMap===make.toLowerCase().trim());
+// 	console.log(findcars);
+// 	console.log(make);
+	const getVisibleCars = cars.filter((car) =>
+	car.make.toString().toLowerCase().includes(maken)
+  );
+	console.log(getVisibleCars);
+	
 	return (
         <div className={css.catalog}>
+			
 			    <div tabIndex={0} onKeyDown={handleKeyDown}>
+					<div className={css.input}>
+						<input className={css.searchinput}  type="text"
+                    placeholder="Enter the text"  value={maken} onChange ={makeHandler}></input>
+						<button className={css.btnSearch}>Search</button>
+					</div>
 		<ul className={css.carsList}>
-			<CarItem toggleModal={toggleModal}/>
+			{maken? (<CarItem cars={getVisibleCars} toggleModal={toggleModal}  id={id}/>) : <CarItem cars={cars} toggleModal={toggleModal}  id={id}/>  } 
 		
 		</ul>
 		{ page<4? <button className={css.loadmore_button} type="button" onClick={() => setPage(page=>(page+1))} >

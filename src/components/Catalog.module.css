@@ -30,3 +30,40 @@
 .loadmore_button:hover {
 	font-size: 16px;
 }
+.input {
+margin-top: 40px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.btnSearch {
+	align-self: flex-end;
+	width: 154px;
+	padding: 12px 0;
+	color: #fff;
+	font-family: Manrope;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 1.43;
+	border-radius: 12px;
+	background: rgba(52, 112, 255, 1);
+	border: none;
+	cursor: pointer;
+	outline: none;
+	margin-top: 18px;
+
+	box-shadow: 0px 3.43693px 3.43693px 0px rgba(0, 0, 0, 0.25);
+
+	transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.searchinput {
+	width: 194px;
+	height: 38px;
+	padding-left: 20px;
+	border-radius: 12px;
+	margin-right: 30px;
+	border: none;
+	background-color: rgba(247, 247, 251, 1);
+	margin-top: 18px;
+}
